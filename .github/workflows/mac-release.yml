@@ -47,7 +47,7 @@ jobs:
       run: |
         macdeployqt $(if [ ${{ matrix.build-type }} -eq Debug ]; then echo "-use-debug-libs"; fi) Ripes.app
         # Enable HiDPI scaling for Retina systems
-        plutil -replace NSHighResolutionCapable -bool true Ripes.app/Contents/Info.plist
+        # plutil -replace NSHighResolutionCapable -bool true Ripes.app/Contents/Info.plist
         # Create icon bundle
         sh .github/workflows/scripts/svg2icns.sh resources/icons/logo.svg
         mv logo.icns Ripes.app/Contents/Resources
